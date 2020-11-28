@@ -26,7 +26,7 @@ def GetMaxMw(Mw, SI, n):
     data = []
     for i in range(0, n+1):
         data.append((SI[0]**(n-i))*(SI[1]**i)*int(comb(n, i)))
-        if ((SI[0]**(n-i-1))*(SI[1]**(i+1))*int(comb(n, i+1)))<((SI[0]**(n-i))*(SI[1]**i)*int(comb(n, i))):
+        if (((SI[0]**(n-i-1))*(SI[1]**(i+1))*int(comb(n, i+1)))<((SI[0]**(n-i))*(SI[1]**i)*int(comb(n, i)))) and i < n:
             break
     data_max = max(data)
     data_id = data.index(data_max)
